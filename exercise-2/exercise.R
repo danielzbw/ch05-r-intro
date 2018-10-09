@@ -3,14 +3,19 @@
 ## the game is called 'is it going to rain in Seattle?'
 
 ## make a variable called 'chance_of_rain' and assign it to be 0
+chance_of_rain <- 0
 
 ## assign 'true' or 'false' to a variable named 'I_saw_raindrops'
+I_saw_raindrops <- FALSE
 
 ## assign 'true' or 'false' to a variable named 'my_shoes_are_wet'
+my_shoes_are_wet <- FALSE
 
 ## assign 'true' or 'false' to a variable named 'my_ta_is_soaked'
+my_ta_is_soaked <- FALSE
 
 ## assign 'true' or 'false' to a variable named 'I_love_cookies'
+I_love_cookies <- FALSE
 
 ## ok, now you have your variables ready to go.
 
@@ -29,5 +34,38 @@
 ## Finally print out a sentence that says 'The chance of rain in Seattle is (the number stored in chance_of_rain variable) percent'
 ## (You are doing predictive analysis here :-)
 
+if (I_saw_raindrops) {
+  chance_of_rain <- 100
+} else if (my_shoes_are_wet) {
+  chance_of_rain <- chance_of_rain + 40
+} else if (my_ta_is_soaked) {
+  chance_of_rain <- chance_of_rain + 50
+}
+if (I_love_cookies) {
+  print("Sometimes I think they are too dry.")
+}
+cat("The chance of rain in seattle is", chance_of_rain, "percent")
+
 ## bonus:
 ## how to make write this exercise in a function??
+weather_analysis <- function(chance_of_rain) {
+  
+  if (I_saw_raindrops) {
+    chance_of_rain <- 100
+  } else if (my_shoes_are_wet) {
+    chance_of_rain <- chance_of_rain + 40
+  } else if (my_ta_is_soaked) {
+    chance_of_rain <- chance_of_rain + 50
+  }
+  
+  if (I_love_cookies) {
+    print("Sometimes I think they are too dry.")
+  }
+  
+  cat("The chance of rain in seattle is", chance_of_rain, "percent")
+}
+
+weather_analysis(chance_of_rain)
+
+
+
